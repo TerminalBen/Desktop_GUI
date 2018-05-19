@@ -42,7 +42,7 @@ class Window(QtGui.QMainWindow):
 
         #Clear Everything button
         btn3 = QtGui.QPushButton('Limpar tudo',self)
-        btn3.clicked.connect(self.printsomeshit)                 #code Clear All
+        btn3.clicked.connect(self.clearAll)                 #code Clear All
         btn3.resize(btn3.sizeHint())
         btn3.move(92,500)
 
@@ -130,6 +130,10 @@ class Window(QtGui.QMainWindow):
 
     def printsomeshit(self):
         print('to do later')
+
+    def clearAll(self):
+        for button in self.group.buttons():
+            button.clear()
 
 
 def main():
