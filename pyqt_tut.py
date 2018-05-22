@@ -1,5 +1,6 @@
 import sys
 from PyQt4 import QtGui,QtCore
+from mail import sendMail
 
 
 
@@ -170,8 +171,7 @@ class Window(QtGui.QMainWindow):
         if self.checkBox6.isChecked():
             status.append(self.checkBox6.text())
 
-        #for i in status:
-        #    print(i)
+        return status
 
     def getTextContent(self):                           #bad code here cant iterate through them
         content = []
@@ -182,7 +182,9 @@ class Window(QtGui.QMainWindow):
 
         print ('\n\n')
         print ('Recado da recepcao! \n\n')
-        print('Ola '+content[0]+'\n\n O Sr(a) '+content[1]+'[checked boxes] e deixou o seguinte recado: \n\n'+content[2]+'.\n\n')
+        print('Ola '+content[0]+'\n\n O Sr(a) '+content[1]+str(self.getBoxStatus())+' e deixou o seguinte recado: \n\n'+content[2]+'.\n\n')
+
+
 
 def main():
     app = QtGui.QApplication(sys.argv)
