@@ -133,7 +133,7 @@ class Window(QtGui.QMainWindow):
     def printsomeshit(self):
         print('to do later')
 
-    def clearAll(self):                     #bad code over here
+    def clearAll(self):                     #bad code over here iteration
         self.textBox1.clear();
         self.textBox2.clear();
         self.textBox3.clear();
