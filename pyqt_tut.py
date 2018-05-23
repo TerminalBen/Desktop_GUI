@@ -39,7 +39,7 @@ class Window(QtGui.QMainWindow):
         #Send Button
         btn2 = QtGui.QPushButton('Enviar',self)
         btn2.clicked.connect(self.getTextContent)
-        btn2.clicked.connect(self.getBoxStatus)                 #code Send email
+        #btn2.clicked.connect(self.getBoxStatus)                 #code Send email
         btn2.resize(btn2.sizeHint())
         btn2.move (20,500)
 
@@ -87,35 +87,35 @@ class Window(QtGui.QMainWindow):
         #checkboxes
         self.checkBox = QtGui.QCheckBox('Telefonou',self)
         self.checkBox.move(10,10)
-        self.checkBox.stateChanged.connect(self.printsomeshit) ##dunno yet
+        #self.checkBox.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.checkBox1 = QtGui.QCheckBox('Veio Ca',self)
         self.checkBox1.move(10,40)
-        self.checkBox1.stateChanged.connect(self.printsomeshit) ##dunno yet
+        #self.checkBox1.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.checkBox2 = QtGui.QCheckBox('Deseja Falar',self)
         self.checkBox2.move(10,70)
-        self.checkBox2.stateChanged.connect(self.printsomeshit) ##dunno yet
+        #self.checkBox2.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.checkBox3 = QtGui.QCheckBox('deseja ve-lo',self)
         self.checkBox3.move(10,100)
-        self.checkBox3.stateChanged.connect(self.printsomeshit) ##dunno yet
+        #self.checkBox3.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.checkBox4 = QtGui.QCheckBox('Volta a telefonar',self)
         self.checkBox4.move(150,10)
-        self.checkBox4.stateChanged.connect(self.printsomeshit) ##dunno yet
+        #self.checkBox4.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.checkBox5 = QtGui.QCheckBox('Volta Ca',self)
         self.checkBox5.move(150,40)
-        self.checkBox5.stateChanged.connect(self.printsomeshit) ##dunno yet
+        #self.checkBox5.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.checkBox6 = QtGui.QCheckBox('Pede para telefonar',self)
         self.checkBox6.move(150,70)
-        self.checkBox6.stateChanged.connect(self.printsomeshit) ##dunno yet
+        #self.checkBox6.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.checkBox7 = QtGui.QCheckBox('Urgente',self)
         self.checkBox7.move(150,100)
-        self.checkBox7.stateChanged.connect(self.printsomeshit) ##dunno yet
+        #self.checkBox7.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.show()
 
@@ -126,7 +126,6 @@ class Window(QtGui.QMainWindow):
         QtGui.QMessageBox.Yes|QtGui.QMessageBox.No)
 
         if (choice == QtGui.QMessageBox.Yes):
-            print('GTFO')
             sys.exit()
         else:
             pass
@@ -150,7 +149,7 @@ class Window(QtGui.QMainWindow):
 
         #iterate through Qcheckboxes/QtextEdit identify the selected ones/messages
         #print selected and content to terminal
-
+        '''
     def getBoxStatus(self):     #more spaguetti code
         status = []
 
@@ -172,19 +171,42 @@ class Window(QtGui.QMainWindow):
             status.append(self.checkBox6.text())
 
         return status
+        '''
 
-    def getTextContent(self):                           #bad code here cant iterate through them
+
+    def getTextContent(self):
+                                 #bad code here cant iterate through them
         content = []
-        content2 =
+        status = []
+
         content.append(self.textBox1.toPlainText())
         content.append(self.textBox2.toPlainText())
         content.append(self.textBox3.toPlainText())
 
+        if self.checkBox.isChecked():
+            status.append(self.checkBox.text())
+        if self.checkBox1.isChecked():
+            status.append(self.checkBox1.text())
+        if self.checkBox2.isChecked():
+            status.append(self.checkBox2.text())
+        if self.checkBox3.isChecked():
+            status.append(self.checkBox3.text())
+        if self.checkBox4.isChecked():
+            status.append(self.checkBox4.text())
+        if self.checkBox5.isChecked():
+            status.append(self.checkBox.text())
+        if self.checkBox5.isChecked():
+            status.append(self.checkBox.text())
+        if self.checkBox6.isChecked():
+            status.append(self.checkBox6.text())
+
         print ('\n\n')
         print ('Recado da recepcao! \n\n')
-        print('Ola '+content[0]+'\n\n O Sr(a) '+content[1]+str(self.getBoxStatus())+' e deixou o seguinte recado: \n\n'+content[2]+'.\n\n')
+        print('Ola '+content[0]+'\n\nO Sr(a) '+content[1]+'\n\n')
 
+        print '\n'.join([str(x) for x in status])
 
+        print('e deixou o seguinte recado: \n\n'+content[2]+'.\n\n')
 
 def main():
     app = QtGui.QApplication(sys.argv)

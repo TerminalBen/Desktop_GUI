@@ -2,7 +2,7 @@ import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 
- def sendMail():
+def sendMail():
     fromaddr = "YOUR ADDRESS"
     toaddr = "ADDRESS YOU WANT TO SEND TO"
     msg = MIMEMultipart()
