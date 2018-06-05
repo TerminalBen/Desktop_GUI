@@ -23,6 +23,16 @@ class Window(QtGui.QMainWindow):
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(extractAction)
 
+        #Import name File
+
+        dict = {}
+        with open('nomes.txt')as f:
+            for line in f:
+                (key,val) = line.split(',')
+                dict[key] = val
+        print (dict)
+
+
         self.home()
 
 
@@ -117,6 +127,13 @@ class Window(QtGui.QMainWindow):
         self.checkBox7.move(150,100)
         #self.checkBox7.stateChanged.connect(self.printsomeshit) ##dunno yet
 
+        self.comboBox1 = QtGui.QComboBox(self)
+        self.comboBox1.move(20,460)
+        #populate ComboBox
+        for k,v in dict.items():
+            comboBox1.addItem(k)
+
+
         self.show()
 
     def close_Application(self):
@@ -175,7 +192,7 @@ class Window(QtGui.QMainWindow):
 
 
     def getTextContent(self):
-                                 #bad code here cant iterate through them
+        #bad code here cant iterate through them
         content = []
         status = []
 
@@ -207,6 +224,19 @@ class Window(QtGui.QMainWindow):
         print '\n'.join([str(x) for x in status])
 
         print('e deixou o seguinte recado: \n\n'+content[2]+'.\n\n')
+
+    #Load File to Dictionary
+    '''
+    def importMail():
+        d = {}
+        with open('nomes.txt')as f:
+            for line in f:
+                (key,val) = line.split(',')
+                d[key] = val
+        print (d)
+    '''
+
+
 
 def main():
     app = QtGui.QApplication(sys.argv)
