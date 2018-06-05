@@ -24,7 +24,6 @@ class Window(QtGui.QMainWindow):
         fileMenu.addAction(extractAction)
 
         #Import name File
-
         dict = {}
         with open('nomes.txt')as f:
             for line in f:
@@ -35,7 +34,9 @@ class Window(QtGui.QMainWindow):
 
         self.home()
 
-
+        #Populate Combobox
+        for k,v in dict.items():
+            self.comboBox1.addItem(k)
 
 #Our Window changing shit
     def home(self):
@@ -49,13 +50,13 @@ class Window(QtGui.QMainWindow):
         #Send Button
         btn2 = QtGui.QPushButton('Enviar',self)
         btn2.clicked.connect(self.getTextContent)
-        #btn2.clicked.connect(self.getBoxStatus)                 #code Send email
+        #btn2.clicked.connect(self.getBoxStatus)
         btn2.resize(btn2.sizeHint())
         btn2.move (20,500)
 
         #Clear Everything button
         btn3 = QtGui.QPushButton('Limpar tudo',self)
-        btn3.clicked.connect(self.clearAll)                 #code Clear All
+        btn3.clicked.connect(self.clearAll)
         btn3.resize(btn3.sizeHint())
         btn3.move(92,500)
 
@@ -130,8 +131,8 @@ class Window(QtGui.QMainWindow):
         self.comboBox1 = QtGui.QComboBox(self)
         self.comboBox1.move(20,460)
         #populate ComboBox
-        for k,v in dict.items():
-            comboBox1.addItem(k)
+        #for k,v in dict.items():
+        #    comboBox1.addItem(k)
 
 
         self.show()
@@ -216,6 +217,8 @@ class Window(QtGui.QMainWindow):
             status.append(self.checkBox.text())
         if self.checkBox6.isChecked():
             status.append(self.checkBox6.text())
+
+        #Store the message in a string and return it.
 
         print ('\n\n')
         print ('Recado da recepcao! \n\n')
