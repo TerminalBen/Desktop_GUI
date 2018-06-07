@@ -153,7 +153,7 @@ class Window(QtGui.QMainWindow):
         print('to do later')
 
     def clearAll(self):                     #bad code over here iteration
-        self.textBox1.clear();
+        #self.textBox1.clear();
         self.textBox2.clear();
         self.textBox3.clear();
 
@@ -198,7 +198,7 @@ class Window(QtGui.QMainWindow):
         content = []
         status = []
 
-        content.append(self.textBox1.toPlainText())
+        #content.append(self.textBox1.toPlainText())
         content.append(self.textBox2.toPlainText())
         content.append(self.textBox3.toPlainText())
 
@@ -223,11 +223,21 @@ class Window(QtGui.QMainWindow):
 
         print ('\n\n')
         print ('Recado da recepcao! \n\n')
-        print('Ola '+content[0]+'\n\nO Sr(a) '+content[1]+'\n\n')
+        print('Ola '+self.comboBox1.currentText()+ '\n\nO Sr(a) '+content[0]+'\n\n')
 
         print '\n'.join([str(x) for x in status])
 
-        print('e deixou o seguinte recado: \n\n'+content[2]+'.\n\n')
+        print('\ne deixou o seguinte recado: \n\n'+content[1]+'.\n\n')
+
+        #Save content to file
+        file = open('testfile.txt','w')
+
+        file.write('\n')
+        file.write('Recado da recepcao! \n\n')
+        file.write('Ola '+ self.comboBox1.currentText()+'\n\nO Sr(a) '+content[0]+'\n\n')
+        file.write('\n'.join([str(x) for x in status]))
+        file.write('\ne deixou o seguinte recado: \n\n'+content[1]+'.\n\n')
+        file.close()
 
     #Load File to Dictionary
     '''

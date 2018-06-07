@@ -3,8 +3,8 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 
 def sendMail():
-    fromaddr = "YOUR ADDRESS"
-    toaddr = "ADDRESS YOU WANT TO SEND TO"
+    fromaddr = "secretaria@bento.cv"
+    toaddr = "bento.lima@bento.cv"
     msg = MIMEMultipart()
     msg['From'] = fromaddr
     msg['To'] = toaddr
@@ -15,7 +15,7 @@ def sendMail():
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(fromaddr, "YOUR PASSWORD")
+    server.login(fromaddr, "bento123.")
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
