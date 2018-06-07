@@ -67,12 +67,13 @@ class Window(QtGui.QMainWindow):
         self.toolBar = self.addToolBar('extraction')
         self.toolBar.addAction(extractAction)
 
-        '''
+
 
         self.textBox1 =  QtGui.QTextEdit(self)
         self.textBox1.setText('Visitado')
         self.textBox1.move(20,170)
         self.textBox1.resize(200,30)
+        '''
 
         self.textBox2 = QtGui.QTextEdit(self)
         self.textBox2.setText('Visitante')
@@ -129,7 +130,7 @@ class Window(QtGui.QMainWindow):
         #self.checkBox7.stateChanged.connect(self.printsomeshit) ##dunno yet
 
         self.comboBox1 = QtGui.QComboBox(self)
-        self.comboBox1.move(20,460)
+        self.comboBox1.move(20,170)
         #populate ComboBox
         #for k,v in dict.items():
         #    comboBox1.addItem(k)
