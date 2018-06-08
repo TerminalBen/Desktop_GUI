@@ -8,7 +8,7 @@ def importMails(self):
 Fill Combobox From Dictionary
 
 Save file
-Send email to selected name(mailgun)
+Send email to selected name
 Format Email
 Aesthetics
 Launcher (Pyinstaller)

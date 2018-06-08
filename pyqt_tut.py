@@ -1,6 +1,8 @@
 import sys
+import smtplib
 from PyQt4 import QtGui,QtCore
-from mail import sendMail
+from email.mime.text import MIMEText
+from email.header import Header
 
 
 
@@ -86,16 +88,6 @@ class Window(QtGui.QMainWindow):
         self.textBox3.resize(250,200)
 
 
-        #text_show2 = QtGui.QTextEdit()
-        #text_show2.setText('SHOW2STR')
-        #text_show2.setReadOnly(True)
-        #text_show2.resize(200,10)
-
-
-        #self.text = QtGui.QTextEdit(self)
-        #self.text.move(0,400)
-
-
         #checkboxes
         self.checkBox = QtGui.QCheckBox('Telefonou',self)
         self.checkBox.move(10,10)
@@ -131,10 +123,6 @@ class Window(QtGui.QMainWindow):
 
         self.comboBox1 = QtGui.QComboBox(self)
         self.comboBox1.move(20,170)
-        #populate ComboBox
-        #for k,v in dict.items():
-        #    comboBox1.addItem(k)
-
 
         self.show()
 
@@ -149,8 +137,6 @@ class Window(QtGui.QMainWindow):
         else:
             pass
 
-    def printsomeshit(self):
-        print('to do later')
 
     def clearAll(self):                     #bad code over here iteration
         #self.textBox1.clear();
@@ -168,37 +154,12 @@ class Window(QtGui.QMainWindow):
 
         #iterate through Qcheckboxes/QtextEdit identify the selected ones/messages
         #print selected and content to terminal
-        '''
-    def getBoxStatus(self):     #more spaguetti code
-        status = []
-
-        if self.checkBox.isChecked():
-            status.append(self.checkBox.text())
-        if self.checkBox1.isChecked():
-            status.append(self.checkBox1.text())
-        if self.checkBox2.isChecked():
-            status.append(self.checkBox2.text())
-        if self.checkBox3.isChecked():
-            status.append(self.checkBox3.text())
-        if self.checkBox4.isChecked():
-            status.append(self.checkBox4.text())
-        if self.checkBox5.isChecked():
-            status.append(self.checkBox.text())
-        if self.checkBox5.isChecked():
-            status.append(self.checkBox.text())
-        if self.checkBox6.isChecked():
-            status.append(self.checkBox6.text())
-
-        return status
-        '''
-
 
     def getTextContent(self):
         #bad code here cant iterate through them
         content = []
         status = []
 
-        #content.append(self.textBox1.toPlainText())
         content.append(self.textBox2.toPlainText())
         content.append(self.textBox3.toPlainText())
 
@@ -240,17 +201,26 @@ class Window(QtGui.QMainWindow):
         file.write('\ne deixou o seguinte recado: \n\n'+content[1]+'.\n\n')
         file.close()
 
-    #Load File to Dictionary
-    '''
-    def importMail():
-        d = {}
-        with open('nomes.txt')as f:
-            for line in f:
-                (key,val) = line.split(',')
-                d[key] = val
-        print (d)
-    '''
-    #Send File (Content) to Mail
+        #Send mail
+
+        #to = self.comboBox1.currentText()
+        to = 'bento.lima@bento.cv'
+        gmail_user = 'secretaria@bento.cv'
+        gmail_pwd = 'bento123.'
+        smtpserver = smtplib.SMTP("mail.bento.cv",587)
+        smtpserver.ehlo()
+        smtpserver.starttls()
+        smtpserver.ehlo()
+        smtpserver.login(gmail_user, gmail_pwd)
+        header = 'To:' + to + '\n' + 'From: ' + gmail_user + '\n' + 'Subject: Recado Da Recepcao\n'
+        print header
+        with open('testfile.txt','rb') as fp:
+            msg = MIMEText(fp.read())
+        smtpserver.sendmail(str(gmail_user), str(to),header+str(msg))
+        print 'done!'
+        smtpserver.close()
+
+
 
 
 
