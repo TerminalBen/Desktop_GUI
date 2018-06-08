@@ -220,7 +220,7 @@ class Window(QtGui.QMainWindow):
             status.append(self.checkBox6.text())
 
         #Store the message in a string and return it.
-
+        '''
         print ('\n\n')
         print ('Recado da recepcao! \n\n')
         print('Ola '+self.comboBox1.currentText()+ '\n\nO Sr(a) '+content[0]+'\n\n')
@@ -228,6 +228,7 @@ class Window(QtGui.QMainWindow):
         print '\n'.join([str(x) for x in status])
 
         print('\ne deixou o seguinte recado: \n\n'+content[1]+'.\n\n')
+        '''
 
         #Save content to file
         file = open('testfile.txt','w')
@@ -249,6 +250,8 @@ class Window(QtGui.QMainWindow):
                 d[key] = val
         print (d)
     '''
+    #Send File (Content) to Mail
+
 
 
 
