@@ -70,14 +70,14 @@ class Window(QtGui.QMainWindow):
         self.toolBar.addAction(extractAction)
         '''
 
-        self.textBox2 = QtGui.QTextEdit(self)
-        self.textBox2.setText('Visitante')
+        self.textBox2 = QtGui.QLineEdit(self)
+        self.textBox2.setPlaceholderText('Visitante')
         self.textBox2.move (20,210)
         self.textBox2.resize(200,30)
 
         self.textBox3 = QtGui.QTextEdit(self)
         self.textBox3.move(20,250)
-        self.textBox3.setText('Mensagem')
+        self.textBox3.setText('')
         self.textBox3.resize(250,200)
 
 
@@ -139,7 +139,7 @@ class Window(QtGui.QMainWindow):
         content = []
         status = []
 
-        content.append(self.textBox2.toPlainText())
+        content.append(self.textBox2.text())
         content.append(self.textBox3.toPlainText())
 
         if self.checkBox.isChecked():
