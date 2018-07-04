@@ -1,13 +1,17 @@
 import sys
 import smtplib
 import time
-from PyQt4 import QtGui,QtCore
+#from PyQt5 import QtGui,QtCore   ------ Pyqt4 code
+from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton,QLineEdit,QTextEdit,QAction,QCheckBox,QWidget,QComboBox,QMessageBox
+from PyQt5.QtCore import pyqtSlot
+from PyQt5 import QtGui
 from email.mime.text import MIMEText
 from email.header import Header
 
 
 
-class Window(QtGui.QMainWindow):
+#class Window(QtGui.QMainWindow):
+class Window(QMainWindow):
 
     def __init__(self):
         super(Window,self).__init__()
@@ -15,22 +19,22 @@ class Window(QtGui.QMainWindow):
         self.setWindowTitle('Recados')
         self.setWindowIcon(QtGui.QIcon('logo.png'))
 
-        extractAction = QtGui.QAction('&Sair',self)
-        extractAction.setStatusTip('Leave the app!')
+        #extractAction = QtGui.QAction('&Sair',self)
+        #extractAction.setStatusTip('Leave the app!')
         #extractAction.setShortcut('q')
-        extractAction.triggered.connect(self.close_Application)
+        #extractAction.triggered.connect(self.close_Application)
 
-        self.statusBar()
+        #self.statusBar()
 
-        mainMenu = self.menuBar()
-        fileMenu = mainMenu.addMenu('&File')
-        fileMenu.addAction(extractAction)
+        #mainMenu = self.menuBar()
+        #fileMenu = mainMenu.addMenu('&File')
+        #fileMenu.addAction(extractAction)
 
         #Import name File
         self.my_dict = {}
         with open('email.txt')as f:
             for line in f:
-                (key,val) = line.split(',')
+                ((key,val)) = line.split(',')
                 self.my_dict[key] = val
         print (self.my_dict)
 
@@ -44,20 +48,20 @@ class Window(QtGui.QMainWindow):
 #Our Window changing shit
     def home(self):
         #Exit Button
-        btn1 = QtGui.QPushButton('Sair',self)
+        btn1 = QPushButton('Sair',self)
         btn1.clicked.connect(self.close_Application)
         #btn.resize(100,100)
         btn1.resize(btn1.sizeHint())
         btn1.move(200,500)
 
         #Send Button
-        btn2 = QtGui.QPushButton('Enviar',self)
+        btn2 = QPushButton('Enviar',self)
         btn2.clicked.connect(self.getTextContent)
         btn2.resize(btn2.sizeHint())
         btn2.move (20,500)
 
         #Clear Everything button
-        btn3 = QtGui.QPushButton('Limpar tudo',self)
+        btn3 = QPushButton('Limpar tudo',self)
         btn3.clicked.connect(self.clearAll)
         btn3.resize(btn3.sizeHint())
         btn3.move(92,500)
@@ -70,52 +74,52 @@ class Window(QtGui.QMainWindow):
         self.toolBar.addAction(extractAction)
         '''
 
-        self.textBox2 = QtGui.QLineEdit(self)
+        self.textBox2 = QLineEdit(self)
         self.textBox2.setPlaceholderText('Visitante')
         self.textBox2.move (20,210)
         self.textBox2.resize(200,30)
 
-        self.textBox3 = QtGui.QTextEdit(self)
+        self.textBox3 = QTextEdit(self)
         self.textBox3.move(20,250)
         self.textBox3.setText('')
         self.textBox3.resize(250,200)
 
 
         #checkboxes
-        self.checkBox = QtGui.QCheckBox('Telefonou',self)
+        self.checkBox = QCheckBox('Telefonou',self)
         self.checkBox.move(10,10)
 
-        self.checkBox1 = QtGui.QCheckBox('Veio Ca',self)
+        self.checkBox1 = QCheckBox('Veio Ca',self)
         self.checkBox1.move(10,40)
 
-        self.checkBox2 = QtGui.QCheckBox('Deseja Falar',self)
+        self.checkBox2 = QCheckBox('Deseja Falar',self)
         self.checkBox2.move(10,70)
 
-        self.checkBox3 = QtGui.QCheckBox('deseja ve-lo',self)
+        self.checkBox3 = QCheckBox('deseja ve-lo',self)
         self.checkBox3.move(10,100)
 
-        self.checkBox4 = QtGui.QCheckBox('Volta a telefonar',self)
+        self.checkBox4 = QCheckBox('Volta a telefonar',self)
         self.checkBox4.move(150,10)
 
-        self.checkBox5 = QtGui.QCheckBox('Volta Ca',self)
+        self.checkBox5 = QCheckBox('Volta Ca',self)
         self.checkBox5.move(150,40)
 
-        self.checkBox6 = QtGui.QCheckBox('Pede para telefonar',self)
+        self.checkBox6 = QCheckBox('Pede para telefonar',self)
         self.checkBox6.move(150,70)
 
-        self.checkBox7 = QtGui.QCheckBox('Urgente',self)
+        self.checkBox7 = QCheckBox('Urgente',self)
         self.checkBox7.move(150,100)
 
-        self.comboBox1 = QtGui.QComboBox(self)
+        self.comboBox1 = QComboBox(self)
         self.comboBox1.move(20,170)
 
         self.show()
 
     def close_Application(self):
-        choice = QtGui.QMessageBox.question(self,'Warning!','Tem a certeza que pretende sair?',
-        QtGui.QMessageBox.Yes|QtGui.QMessageBox.No)
+        choice = QMessageBox.question(self,'Warning!','Tem a certeza que pretende sair?',
+        QMessageBox.Yes|QMessageBox.No)
 
-        if (choice == QtGui.QMessageBox.Yes):
+        if (choice == QMessageBox.Yes):
             sys.exit()
         else:
             pass
@@ -191,11 +195,11 @@ class Window(QtGui.QMainWindow):
         smtpserver.ehlo()
         smtpserver.login(gmail_user, gmail_pwd)
         header = 'To:' + to + '\n' + 'From: ' + gmail_user + '\n' + 'Subject: Recado Da Recepcao\n'
-        print header
+        print (header)
         with open('testfile.txt','rb') as fp:
             msg = MIMEText(fp.read())
         smtpserver.sendmail(str(gmail_user), str(to),header+str(msg))
-        print 'done!'
+        print ('done!')
         smtpserver.close()
         self.clearAll()
 
@@ -205,7 +209,8 @@ class Window(QtGui.QMainWindow):
 
 
 def main():
-    app = QtGui.QApplication(sys.argv)
+    #app = QtGui.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     Gui = Window()
     sys.exit(app.exec_())
 

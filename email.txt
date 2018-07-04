@@ -1,5 +1,5 @@
 Adelaide Lopes Almeida                   ,laidinhalmeida@gmail.com           
-Aderito Eduiz Brito Ferreira Gonçalves   ,fritoferreiraaderitoeduiz@gmail.com
+Aderito Eduiz Brito Ferreira Goncalves   ,fritoferreiraaderitoeduiz@gmail.com
 Adilson Adriano Andrade Morais           ,moraisadilson1410@gmail.com        
 Adilson Calazans Lopes Nascimento        ,adilson.calazans@bento.cv          
 Adilson Jorge Martins dos Santos         ,adilsonjorgedossantos@hotmail.com  
@@ -12,7 +12,7 @@ Antonio Alberto Neves                    ,antonio.neves@bento.cv
 Antonio Neves da Cruz                    ,antoniocruz@life.com               
 Arlinda Maria da Cruz Ferreira           ,arlinda.cruz.ferreira@gmail.com    
 Armindo Jose Neves Rodrigues             ,                                   
-Bento Alves Lima			   ,bento.lima@bento.cv
+Bento Alves Lima			 ,bento.lima@bento.cv
 Carlino Pedro da Luz                     ,jackizopedro86@gmail.com           
 Carlita de Fatima Roque Rodrigues        ,carlita.roque.rodrigues@gmail.com  
 Carlos Alberto Pires do Rosario          ,carlos14dorosario74@gmail.com      
@@ -61,7 +61,7 @@ Orlando Bonifacio F. do Rosario          ,
 Rilda Madalena Sousa C. dos Santos       ,rilmadalena31@hotmail.com          
 Rita Maria Silva Fortes                  ,rita.fortes@bento.cv               
 Roberto Carlos da Graca da Luz           ,robertluz36@hotmail.com            
-Rosiane Alves Souto Gonçalves            ,goncalvesrosiane11@gmail.com       
+Rosiane Alves Souto Goncalves            ,goncalvesrosiane11@gmail.com       
 Rui Pires Tomasia                        ,ruitomasia@gmail.com               
 Sheila Helena M. Almeida                 ,sheila.almeida@bento.cv            
 Sonia Fernandes Medina                   ,sonia.medina@bento.cv              
@@ -71,10 +71,10 @@ Joao Augusto Nascimento                  ,
 Suzilene Delgado Santos                  ,suzydelgado91@gmail.com            
 Danielson Henrique Alves Brito           ,                                   
 Henrique Filipe Fernandes Soares         ,tanksoares19872010@hotmail.com     
-Jose Luís Soares Costa                   ,joseluissoares83@gmail.com         
+Jose Luis Soares Costa                   ,joseluissoares83@gmail.com         
 Emerson Jorge Henrique Dias              ,emhendias@gmail.com                
 Ilucete Fernandes Tavares                ,ilucetefernandes@gmail.com         
-Luís Manuel Neves                        ,luizmimaneusa@gmail.com            
+Luis Manuel Neves                        ,luizmimaneusa@gmail.com            
 Carlos Roberto Oliveira Fortes           ,                                   
 Romilton Fernando Almeida Oliveira       ,romiltonoliveira1990@gmail.com     
 Lara Patricia Antunes Rodrigues          ,antuneslara0985@gmail.com          
@@ -100,7 +100,7 @@ Aderitson Manuel Fortes Rodrigues        ,
 Adilson Gilberto Vitoria Santos          ,adilson.cv.br@hotmail.com          
 Amarildo Delgado Lima                    ,                                   
 Brasiliano Sabino Mota                   ,                                   
-Celio Antonio da Graça Gonçalves         ,celiograca66@gmail.com             
+Celio Antonio da Graca Goncalves         ,celiograca66@gmail.com             
 Francisco Osvaldo Rocha Duarte           ,                                   
 Pedro dos Santos Silva                   ,                                   
 Walter Inacio Delgado Miranda            ,                                   
@@ -111,7 +111,7 @@ Julio Cesar Monteiro Neves               ,jcneves1986@gmail.com
 Ronizia Elsi Mota Zigo                   ,                                   
 Valdir Manuel Rocha Andrade              ,                                   
 Elton Carlos Lima Dias                   ,elton3dias@gmail.com               
-Chris Jorge da Graça Diniz Almeida       ,almeidachris325@gmail.com          
+Chris Jorge da Graca Diniz Almeida       ,almeidachris325@gmail.com          
 Danielson Renato Silva Cabral            ,danielsoncabral668@gmail.com       
 Davilson Andrade Lopes                   ,davyylopes777@gmail.com            
 Debora Soares Lopes                      ,                                   
@@ -132,7 +132,7 @@ Evanildo Monteiro Evora                  ,
 Fabricio Daniel Andrade Fonseca          ,                                   
 Marco Aurelio Ramos Russo                ,                                   
 Marco Paulo Almeida Timas do Rosario     ,maky1993@live.com.pt               
-Patrick Júnior Ramos Silva               ,                                   
+Patrick Junior Ramos Silva               ,                                   
 Rui Santos Fonseca                       ,                                   
 Rosalina Morais Monteiro                 ,rosalimonteiro@outlook.com         
 Aldina Maria Fonseca Silva               ,aldina.silva14@gmail.com           
@@ -147,4 +147,4 @@ Marco Aurelio dos Santos Cruz            ,franciscocarrilpazos67@gmail.com
 Marlon Jorge da Cruz Barbosa             ,                                   
 Mike Christian Costa Fortes              ,                                   
 Rudy Edson Lopes                         ,                                   
-Silas josé Costa Delgado                 ,                                   
+Silas jose Costa Delgado                 ,                                   
