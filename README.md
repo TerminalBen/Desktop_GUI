@@ -10,8 +10,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 Python2 but preferably python3,  PyQt5 and its dependecies
 
-```
-
 ## Built With
 
 * [PyQt5](https://www.riverbankcomputing.com/software/pyqt/intro) - The UI framework used
