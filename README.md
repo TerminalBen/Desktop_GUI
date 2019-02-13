@@ -16,7 +16,7 @@ Python3,  PyQt5 and its dependecies
 
 ## Authors
 
-* **Bento Lima** - *Front and back end* 
+* **TerminalBen** - *Front and back end* 
 
 ## License
 
